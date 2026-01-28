@@ -1,1 +1,2 @@
-GET https://z5gtr2kof5.execute-api.eu-west-1.amazonaws.com/prod/spaces
+
+POST https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces
