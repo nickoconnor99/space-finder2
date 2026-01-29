@@ -18,10 +18,10 @@ export async function handler(
   try {
     switch (event.httpMethod) {
       case "GET":
-        const getResponse = getSpaces(event, ddbClient);
+        const getResponse = await getSpaces(event, ddbClient);
         return getResponse;
       case "POST":
-        const postResponse = postSpaces(event, ddbClient);
+        const postResponse = await postSpaces(event, ddbClient);
         return postResponse;
       default:
         break;
