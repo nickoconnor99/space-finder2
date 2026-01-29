@@ -1,2 +1,8 @@
+GET https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces
 
-POST https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces
+# POST https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces
+# content-type: application/json
+
+# {
+#     "location": "Dublin",
+# }
