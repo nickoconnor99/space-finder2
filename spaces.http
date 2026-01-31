@@ -1,19 +1,19 @@
 GET https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces
 
 
-DELETE https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces?id=343345
+# DELETE https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces?id=343345
 
-PUT https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces?id=343345
-content-type: application/json
+# PUT https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces?id=0.08939088218649927
+# content-type: application/json
 
-{
-    "location": "Paris",
-}
+# {
+#     "name": "London3"
+# }
 
-POST https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces
-content-type: application/json
+# POST https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces
+# content-type: application/json
 
-{
-    "location": "Dublin3",
-}
+# {
+#     "location": "Dublin3",
+# }
 

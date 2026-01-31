@@ -8,7 +8,7 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { getSpaces } from "./GetSpaces";
 import { updateSpaces } from "./UpdateSpaces";
 import { deleteSpaces } from "./DeleteSpaces";
-import { MissingFieldError } from "../shared/Validator";
+import { JsonError, MissingFieldError } from "../shared/Validator";
 
 const ddbClient = new DynamoDBClient({});
 
@@ -43,9 +43,15 @@ export async function handler(
         body: JSON.stringify(error.message)
       }
     }
+     if(error instanceof JsonError) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify(error.message)
+      }
+    }
     return {
       statusCode: 500,
-      body: JSON.stringify(error),
+      body: JSON.stringify("Internal Server Error"),
     };
   }
 

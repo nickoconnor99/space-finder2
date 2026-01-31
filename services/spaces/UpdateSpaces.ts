@@ -6,6 +6,7 @@ import {
 } from "@aws-sdk/client-dynamodb";
 import { unmarshall } from "@aws-sdk/util-dynamodb";
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
+import { parseJSON } from "../shared/Utils";
 
 export async function updateSpaces(
   event: APIGatewayProxyEvent,
@@ -15,7 +16,7 @@ export async function updateSpaces(
   if (event.queryStringParameters && event.body) {
     if ("id" in event.queryStringParameters) {
       const spaceId = event.queryStringParameters["id"];
-      const parsedBody = JSON.parse(event.body);
+      const parsedBody = parseJSON(event.body);
       const requestBodyKey = Object.keys(parsedBody)[0];
       const requestBodyValue = parsedBody[requestBodyKey];
       const updateResult = await ddbClient.send(
