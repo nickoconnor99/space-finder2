@@ -5,7 +5,7 @@ import { Construct } from 'constructs';
 
 export class AuthStack extends Stack {
 
-    private userPool : UserPool
+    public userPool : UserPool
     private userPoolClient: UserPoolClient
     
 

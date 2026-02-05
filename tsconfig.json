@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "target": "ES2020",
+    "resolveJsonModule": true,
     "module": "commonjs",
-    "lib": ["es2020"],
+    "lib": ["es2020", "dom","esnext"],
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
@@ -19,7 +20,6 @@
     "strictPropertyInitialization": false,
     "types": [
       // ... your other types
-      "node"
     ],
     "typeRoots": ["./node_modules/@types"]
   },
