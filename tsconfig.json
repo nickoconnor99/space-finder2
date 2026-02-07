@@ -3,7 +3,7 @@
     "target": "ES2020",
     "resolveJsonModule": true,
     "module": "commonjs",
-    "lib": ["es2020", "dom","esnext"],
+    "lib": ["es2020", "dom", "esnext"],
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
@@ -19,6 +19,8 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "types": [
+      "node",
+      "jest"
       // ... your other types
     ],
     "typeRoots": ["./node_modules/@types"]
