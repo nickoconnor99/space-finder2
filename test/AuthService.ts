@@ -1,11 +1,16 @@
 import { SignInOutput, signIn, fetchAuthSession } from "@aws-amplify/auth";
+import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity";
+import { fromCognitoIdentityPool } from "@aws-sdk/credential-providers";
 import { Amplify } from "aws-amplify";
+
+const awsRegion = "eu-west-1";
 
 Amplify.configure({
   Auth: {
     Cognito: {
       userPoolId: "eu-west-1_AabMMwD7R",
       userPoolClientId: "4pj53kcb7r1n6ic0rk065csvij",
+      identityPoolId: "eu-west-1:9ee405e5-5a0c-43ca-aba6-370df18710bf",
     },
   },
 });
@@ -25,12 +30,25 @@ export class AuthService {
   public async getIdToken() {
     const authSession = await fetchAuthSession();
     const test = authSession.tokens?.idToken?.toString();
-    console.log(test)
+    console.log(test);
     return test;
   }
+
+  public async generateTemporaryCredentials() {
+    const idToken = await this.getIdToken();
+    const cognitoIdentityPool = `cognito-idp.${awsRegion}.amazonaws.com/eu-west-1_AabMMwD7R`;
+    const cognitoIdentity = new CognitoIdentityClient({
+      credentials: fromCognitoIdentityPool({
+        identityPoolId: "eu-west-1:9ee405e5-5a0c-43ca-aba6-370df18710bf",
+        logins: {
+          [cognitoIdentityPool]: idToken || "",
+        },
+      }),
+    });
+    const credentials = await cognitoIdentity.config.credentials();
+    return credentials;
+  }
 }
-
-
 
 // import { Amplify } from "aws-amplify";
 // import { SignInOutput, fetchAuthSession, signIn } from "@aws-amplify/auth";
