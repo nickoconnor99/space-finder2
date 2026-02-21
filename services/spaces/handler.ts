@@ -9,29 +9,37 @@ import { getSpaces } from "./GetSpaces";
 import { updateSpaces } from "./UpdateSpaces";
 import { deleteSpaces } from "./DeleteSpaces";
 import { JsonError, MissingFieldError } from "../shared/Validator";
+import { addCorsHeader } from "../../infra/Utils";
 
 const ddbClient = new DynamoDBClient({});
 
-let message: string;
+//let message: string;
 
 export async function handler(
   event: APIGatewayProxyEvent,
   context: Context,
 ): Promise<APIGatewayProxyResult> {
+
+  let response: APIGatewayProxyResult;
+
   try {
     switch (event.httpMethod) {
       case "GET":
         const getResponse = await getSpaces(event, ddbClient);
-        return getResponse;
+        response = getResponse;
+        break;
       case "DELETE":
         const deleteResponse = await deleteSpaces(event, ddbClient);
-        return deleteResponse;
+        response = deleteResponse;
+        break;
       case "POST":
         const postResponse = await postSpaces(event, ddbClient);
-        return postResponse;
+        response = postResponse;
+        break;
       case "PUT":
         const putResponse = await updateSpaces(event, ddbClient);
-        return putResponse;
+        response = putResponse;
+        break;
       default:
         break;
     }
@@ -54,11 +62,11 @@ export async function handler(
       body: JSON.stringify("Internal Server Error"),
     };
   }
-
-  const response: APIGatewayProxyResult = {
+  response = {
     statusCode: 200,
     body: JSON.stringify("Hello from Spaces Service!"),
   };
 
+  addCorsHeader(response);
   return response;
 }
