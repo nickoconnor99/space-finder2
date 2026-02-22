@@ -1,11 +1,14 @@
 import { Outlet, createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.css"
+import "./App.css";
 import { useState } from "react";
 import NavBar from "./components/NavBar";
 import LoginComponent from "./components/LoginComponent";
 import { AuthService } from "./services/AuthService";
+import { DataService } from "./services/DataService";
+import CreateSpace from "./components/spaces/CreateSpace";
 
 const authService = new AuthService();
+const dataService = new DataService(authService);
 
 function App() {
   const [userName, setUserName] = useState<string | undefined>(undefined);
@@ -21,7 +24,12 @@ function App() {
       children: [
         {
           path: "/login",
-          element: <LoginComponent authService={authService} setUserNameCb={setUserName} />,
+          element: (
+            <LoginComponent
+              authService={authService}
+              setUserNameCb={setUserName}
+            />
+          ),
         },
         {
           path: "/",
@@ -29,7 +37,7 @@ function App() {
         },
         {
           path: "/createSpace",
-          element: <div>CS</div>,
+          element: <CreateSpace dataService={dataService}></CreateSpace>,
         },
         {
           path: "/spaces",
