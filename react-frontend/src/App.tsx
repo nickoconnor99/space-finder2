@@ -1,5 +1,5 @@
 import { Outlet, createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.css";
+import "./App.css"
 import { useState } from "react";
 import NavBar from "./components/NavBar";
 import LoginComponent from "./components/LoginComponent";

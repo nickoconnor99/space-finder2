@@ -1,8 +1,8 @@
 import {Amplify} from 'aws-amplify'
-import { type SignInOutput, signIn, type fetchAuthSession } from '@aws-amplify/auth';
+import { type SignInOutput, signIn, } from '@aws-amplify/auth';
 import {AuthStack} from '../../../space-finder2V4/outputs.json'
 
-const awsRegion = 'eu-west-1';
+//const awsRegion = 'eu-west-1';
 
 Amplify.configure({
   Auth: {
