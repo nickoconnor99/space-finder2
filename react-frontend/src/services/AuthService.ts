@@ -21,8 +21,15 @@ export class AuthService {
 
   private user: SignInOutput | undefined; //SignInOutput will tell us if logged in or not
   private userName: string = '';
-  private jwtToken: string | undefined;
+  public jwtToken: string | undefined;
   private temporaryCredentials: object | undefined;
+
+  public isAuthorized() {
+    if (this.user) {
+      return true;
+    }
+    return false;
+  }
 
   public async login(
     userName: string,
