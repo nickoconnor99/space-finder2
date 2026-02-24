@@ -10,7 +10,7 @@ export async function postSpaces(
 ): Promise<APIGatewayProxyResult> {
   const randomId = createRandomId();
   const item = JSON.parse(event.body || "{}");
-  item.id = randomId
+  item.id = randomId;
   validateAsSpaceEntry(item);
 
   const result = await ddbClient.send(
