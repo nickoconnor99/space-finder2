@@ -1,7 +1,11 @@
-import { SNSEvent } from "aws-lambda";
+import type { SNSEvent } from "aws-lambda";
+import "dotenv/config";
 
-const webHookUrl = process.env.SLACK_WEBHOOK_URL!;
+const webHookUrl = process.env.SLACK_WEBHOOK_URL as string;
 
+if (!webHookUrl) {
+  throw new Error("SLACK_WEBHOOK_URL is not set");
+}
 
 async function handler(event: SNSEvent) {
   console.log("Event received:", JSON.stringify(event));
@@ -14,7 +18,7 @@ async function handler(event: SNSEvent) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          text: `Arsenal Premier League Champions 25/26: ${record.Sns.Message}`,
+          text: `Arsenal Champions League Winners 25/26: ${record.Sns.Message}`,
         }),
       });
 

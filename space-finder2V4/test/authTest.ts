@@ -5,15 +5,19 @@ import { AwsCredentialIdentity } from "@aws-sdk/types";
 
 async function testAuth() {
   const service = new AuthService();
-  await service.login("paulallen99", "Liverpool11@#");
+  const loginResult = await service.login("paulallen99", "Liverpool11@#");
 
-  //
-  const idToken = await service.getIdToken();
+  // Example: Access tokens from loginResult if available
+  // Replace with the actual property/method from your AuthService implementation
+  console.log(await service.getIdToken()); // Adjust based on your AuthService's response structure
+
+  
+  //const idToken = await service.getIdToken();
   //console.log(idToken);
-  const credentials = await service.generateTemporaryCredentials();
-  const a = 6;
-  const buckets = await listBuckets(credentials);
-  console.log(buckets);
+  // const credentials = await service.generateTemporaryCredentials();
+  // const a = 6;
+  // const buckets = await listBuckets(credentials);
+  // console.log(buckets);
 }
 
 async function listBuckets(credentials: AwsCredentialIdentity) {

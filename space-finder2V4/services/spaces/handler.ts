@@ -10,8 +10,12 @@ import { updateSpaces } from "./UpdateSpaces";
 import { deleteSpaces } from "./DeleteSpaces";
 import { JsonError, MissingFieldError } from "../shared/Validator";
 import { addCorsHeader } from "../../infra/Utils";
+import { captureAWSv3Client } from "aws-xray-sdk-core";
 
-const ddbClient = new DynamoDBClient({});
+
+//const ddbClient = new DynamoDBClient({});
+
+const ddbClient = captureAWSv3Client(new DynamoDBClient({}))  //for monitoring alarms
 
 //let message: string;
 

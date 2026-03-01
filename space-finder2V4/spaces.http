@@ -1,25 +1,25 @@
 @url = https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/
-@token = eyJraWQiOiJCb3FWWDU4TndOU0hpSDdMVFZ3eWg5SUh2a3ljOVpteUJPRVVtMk5zcElRPSIsImFsZyI6IlJTMjU2In0.eyJvcmlnaW5fanRpIjoiNDYyNGFlZmMtZmM2Yi00NmU1LThjNzktYmM2M2U3YmRiMDA0Iiwic3ViIjoiYTI4NTc0YjQtMjAxMS03MDQ5LTVmNjgtN2Q4NmVhYzVhZWFlIiwiYXVkIjoiNHBqNTNrY2I3cjFuNmljMHJrMDY1Y3N2aWoiLCJldmVudF9pZCI6IjAzYTYyZmMwLTZkMWUtNGU4My1hY2UzLTFmNzQ4ZDUzZjAwNiIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNzcwNDkzODkzLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV9BYWJNTXdEN1IiLCJjb2duaXRvOnVzZXJuYW1lIjoicGF1bGFsbGVuOTkiLCJleHAiOjE3NzA0OTc0OTMsImlhdCI6MTc3MDQ5Mzg5MywianRpIjoiZTk3YjAyNWMtNjUxMi00ZDZkLWI2M2MtMGYyNjJhYjFhMDdmIn0.EE_YZUqaFl4sH2w28xPTK3Bdj56jTKTJaEMqDRjbAQz8rpoqFo5v7uPSGegEQ8qmWDgijr3xyXCQS1RQGHF8_FM9hbWS35zazdX0B3TWSVnnBnKU9x_ha06-6b7SemubuJTKjiJ80KEeRUiOZAGtJb1naMRBTgbNZDYYpeHAS4wNCjM-2CIACyZKlIl2N4lKhaQq24TP7HhgpzBMBA3WeEJbXZpzEfh17VlVg8RxRVH9b877I3e8pCDPo1KwsBBfGLr4CQL6iqpLtsO60XjXIlaOYYt19oytrexAE3TQ8Zq579egV3sggBI_9kCGJlIgcmYPeJlC9SnmvB-nzqpq9g
+@token = eyJraWQiOiJCb3FWWDU4TndOU0hpSDdMVFZ3eWg5SUh2a3ljOVpteUJPRVVtMk5zcElRPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJhMjg1NzRiNC0yMDExLTcwNDktNWY2OC03ZDg2ZWFjNWFlYWUiLCJjb2duaXRvOmdyb3VwcyI6WyJhZG1pbnMiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfQWFiTU13RDdSIiwiY29nbml0bzp1c2VybmFtZSI6InBhdWxhbGxlbjk5Iiwib3JpZ2luX2p0aSI6ImZlNDE2NzA3LTliYWEtNGZiNS1hNDdjLTQ3MDRmNzFjNzI3YSIsImNvZ25pdG86cm9sZXMiOlsiYXJuOmF3czppYW06OjI5NDMyNzIwOTM2ODpyb2xlXC9BdXRoU3RhY2stQ29nbml0b0FkbWluUm9sZTRDMTBGQkE0LVdiYUNJczAyU3FMbiJdLCJhdWQiOiI0cGo1M2tjYjdyMW42aWMwcmswNjVjc3ZpaiIsImV2ZW50X2lkIjoiMzNlYTE5YWMtYjRlNy00Mzg2LTlhMzQtY2MyMWNhZTI4NWNjIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3NzIzNjU3MzgsImV4cCI6MTc3MjM2OTMzOCwiaWF0IjoxNzcyMzY1NzM4LCJqdGkiOiI2NjQ0YjFiNi1kZTc4LTRlZWEtYTYxZS1mNDgxYzZhMjM4ODkifQ.gliggyUyjSukkPM2reopCOVGHV18uFiiTVzUvUNLSt5XPyxdEwKhLERHRQVggPQ0quYsqEHIzY_gWgNwiayblr0erSE6V-lnqbLpKkxaotjryD3f500_2pxuKlSTVtGcN8TdTCMUR4cAymUAc43e3v5gfTA9D3D3WSsrGCYGPUOVi0kR0BwHYULe76yrWFjr2I_lJ1E_0Usf8PizAI1BRzXRt35eU1S2UE3ed0Yh1pd4DfJTwVhpLIcFOaJI4gog-EX3ADovcXIMR95wwdgGnEQuEvjt54EokyG3swCnvJAHybCoxuB30vkmvtLUnbGyWiVMdCFqMBtNGsYWFEpkBw
+# GET {{url}}/spaces
+# Authorization: {{token}}
 
 
-
-GET {{url}}/spaces
-Authorization: {{token}}
-
-
-# DELETE https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces?id=343345
+# DELETE https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces?id=1234
+# Authorization: {{token}}
 
 # PUT https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces?id=0.08939088218649927
+# Authorization: {{token}}
 # content-type: application/json
 
 # {
-#     "name": "London3"
+#     "name": "London4"
 # }
 
-# POST https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces
-# content-type: application/json
+POST https://0hlkzzmmr9.execute-api.eu-west-1.amazonaws.com/prod/spaces
+Authorization: {{token}}
+content-type: application/json
 
-# {
-#     "location": "Dublin3",
-# }
+{
+    "location": "Dublin4",
+}
 
