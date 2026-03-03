@@ -7,16 +7,13 @@ if (!webHookUrl) {
   throw new Error("SLACK_WEBHOOK_URL is not set");
 }
 
-async function handler(event: SNSEvent) {
+async function handler(event: SNSEvent, {}) {
   console.log("Event received:", JSON.stringify(event));
 
   for (const record of event.Records) {
     try {
       const response = await fetch(webHookUrl, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
         body: JSON.stringify({
           text: `Arsenal Champions League Winners 25/26: ${record.Sns.Message}`,
         }),

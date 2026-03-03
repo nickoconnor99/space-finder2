@@ -1,6 +1,6 @@
 import type { Config } from "@jest/types";
 
-const baseTestDir = "<rootDir>/space-finder2V4/tests";
+const baseTestDir = "<rootDir>/space-finder2V4/test/services";
 
 const config: Config.InitialOptions = {
   preset: "ts-jest",
